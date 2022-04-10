@@ -1,10 +1,7 @@
 package pl.coderslab;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloCOntroller {
@@ -15,6 +12,12 @@ public class HelloCOntroller {
     @ResponseBody
     public String helloWorld(){
         return "Hello World";
+    }
+
+    @GetMapping(value = "hello/{firstName}/{lastName}", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String nameAndSurname(@PathVariable String firstName, @PathVariable String lastName){
+        return "Witaj " + firstName + " " + lastName;
 
     }
 
