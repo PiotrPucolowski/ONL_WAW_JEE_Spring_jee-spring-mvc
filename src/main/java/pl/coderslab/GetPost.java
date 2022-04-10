@@ -13,7 +13,7 @@ public class GetPost {
     @GetMapping(value = "/form", produces = "text/plain;charset=UTF-8")
     @RequestMapping("/form")
     public String getHello() {
-        return "form.jsp";
+        return "form";
     }
 
     @PostMapping(value = "/form", produces = "text/html; charset=UTF-8")

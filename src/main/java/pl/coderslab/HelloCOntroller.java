@@ -20,5 +20,10 @@ public class HelloCOntroller {
         return "Witaj " + firstName + " " + lastName;
 
     }
+    @GetMapping("/helloview")
+    public String helloView(){
+
+        return "home";
+    }
 
 }
